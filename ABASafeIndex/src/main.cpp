@@ -94,6 +94,10 @@ void demoCalculateMask(){
 	cout << "IndexMask(7): " << CalculateHelper<7>::IndexMask() << endl;
 	cout << "IndexMask(8): " << CalculateHelper<8>::IndexMask() << endl;
 	cout << "IndexMask(9): " << CalculateHelper<9>::IndexMask() << endl;
+	cout << "IndexMask(15): " << CalculateHelper<15>::IndexMask() << endl;
+	cout << "IndexMask(16): " << CalculateHelper<16>::IndexMask() << endl;
+	cout << "IndexMask(31): " << CalculateHelper<31>::IndexMask() << endl;
+	cout << "IndexMask(32): " << CalculateHelper<32>::IndexMask() << endl;
 }
 void demoCalculateSplitBit(){
 	cout << __PRETTY_FUNCTION__ << endl;
