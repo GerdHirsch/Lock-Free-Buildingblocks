@@ -1,7 +1,8 @@
 /*
  * copyright Gerd Hirsch
  */
-
+#include "ABASafeIndex/RingbufferPosition.h"
+#include "ABASafeIndex/UniqueIndex.h"
 #include "ABASafeIndex/ABASafeIndex.h"
 
 #include <iostream>
