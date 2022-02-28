@@ -14,12 +14,12 @@ int main(){
 	cout << "ABASafeIndex" << endl;
 //	demoCalculateMask();
 //	demoCalculateSplitBit();
+	demoIsPowerOfTwo();
 //	demoABASafeIndex();
 //	demoUniqueIndex();
-//	demoIsPowerOfTwo();
 //	demoRingbufferPosition();
 //	demoRingbufferPositionIsOptimized();
-	demoRingbufferPositionIsBehind();
+//	demoRingbufferPositionIsBehind();
 
 //	demoIsLockfree();
 //	demoCalculateMaxNumElementsForSizeT();

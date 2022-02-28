@@ -17,13 +17,13 @@ public:
 
 	RingbufferPosition():base_type(0){}
 
-	bool isOptimized(){ return true; }
+	bool isOptimized() const { return true; }
 	this_type& operator++(){
 		++value;
 		return *this;
 	}
 
-	ValueType getABACounter(){
+	ValueType getABACounter()const{
 		return value & ~INDEX_MASK;
 	}
 	void setABACounter(ValueType counter){
@@ -76,7 +76,7 @@ public:
 	using ValueType = typename base_type::ValueType;
 
 	RingbufferPosition():base_type(0){}
-	bool isOptimized(){ return false; }
+	bool isOptimized() const { return false; }
 
 	this_type& operator++(){
 		if(getIndex() >= NumElements-1){

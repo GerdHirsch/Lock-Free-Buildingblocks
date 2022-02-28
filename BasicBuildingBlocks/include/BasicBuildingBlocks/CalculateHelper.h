@@ -55,19 +55,18 @@ static constexpr ValueType IndexMask(){
 }
 inline
 static constexpr ValueType SplitBit(){
+	return (IndexMask() << 1) & ~IndexMask();
 
-	ValueType retVal = 2;
-	while(retVal < numElements)
-		retVal <<= 1;
-	return retVal;
+//	ValueType retVal = 2;
+//	while(retVal < numElements)
+//		retVal <<= 1;
+//	return retVal;
 }
 inline
 static constexpr bool isPowerOfTwo(){
-	auto constexpr splitBit_RightShift = SplitBit() >> 1;
-
-	return splitBit_RightShift == numElements;
-
+	return numElements == 1 ? true : SplitBit() == numElements;
 }
+
 
 };
 #endif /* INCLUDE_BASICBUILDINGBLOCKS_CALCULATEHELPER_H_ */
