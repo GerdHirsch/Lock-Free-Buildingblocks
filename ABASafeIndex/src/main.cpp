@@ -13,22 +13,39 @@ using namespace std;
 void demoCalculateMask();
 void demoCalculateSplitBit();
 void demoABASafeIndex();
+void demoRingbufferPosition();
 void demoUniqueIndex();
+void demoIsPowerOfTwo();
 
 void demoIsLockfree();
 void demoCalculateMaxNumElementsForSizeT();
 int main(){
 	cout << "ABASafeIndex" << endl;
-	demoCalculateMask();
-	demoCalculateSplitBit();
+//	demoCalculateMask();
+//	demoCalculateSplitBit();
 //	demoABASafeIndex();
 //	demoUniqueIndex();
-
-
+//	demoIsPowerOfTwo();
+	demoRingbufferPosition();
 
 	//	demoIsLockfree();
 //	demoCalculateMaxNumElementsForSizeT();
 
+}
+void demoRingbufferPosition(){
+	RingbufferPosition<3> rp3;
+	RingbufferPosition<4> rp4;
+	cout << "rp3.isOptimized(): " << rp3.isOptimized() << endl;
+	cout << "rp4.isOptimized(): " << rp4.isOptimized() << endl;
+}
+void demoIsPowerOfTwo(){
+	cout << "IsPowerOfTwo(1): " << CalculateHelper<1>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(2): " << CalculateHelper<2>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(3): " << CalculateHelper<3>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(4): " << CalculateHelper<4>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(7): " << CalculateHelper<7>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(8): " << CalculateHelper<8>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(9): " << CalculateHelper<9>::isPowerOfTwo() << endl;
 }
 
 template<std::size_t NumElements>

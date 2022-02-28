@@ -61,5 +61,13 @@ static constexpr ValueType SplitBit(){
 		retVal <<= 1;
 	return retVal;
 }
+inline
+static constexpr bool isPowerOfTwo(){
+	auto constexpr splitBit_RightShift = SplitBit() >> 1;
+
+	return splitBit_RightShift == numElements;
+
+}
+
 };
 #endif /* INCLUDE_ABASAFEINDEX_CALCULATERHELPER_HPP_ */
