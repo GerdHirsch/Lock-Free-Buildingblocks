@@ -11,8 +11,10 @@ void demoIsLockfree();
 void demoCalculateMaxNumElementsForSizeT();
 //
 void demoABASafeIndex();
-void demoRingbufferPosition();
 void demoUniqueIndex();
 
+// DemoRingbufferPosition
+void demoRingbufferPositionIsOptimized();
+void demoRingbufferPosition();
 
 #endif /* DEMOS_H_ */

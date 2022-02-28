@@ -4,10 +4,8 @@
 
 #include "Demos.h"
 
-#include <BasicBuildingBlocks/RingbufferPosition.h>
 
 #include <iostream>
-#include <atomic>
 using namespace std;
 
 
@@ -19,9 +17,10 @@ int main(){
 //	demoABASafeIndex();
 //	demoUniqueIndex();
 //	demoIsPowerOfTwo();
+//	demoRingbufferPositionIsOptimized();
 	demoRingbufferPosition();
 
-	//	demoIsLockfree();
+//	demoIsLockfree();
 //	demoCalculateMaxNumElementsForSizeT();
 
 }

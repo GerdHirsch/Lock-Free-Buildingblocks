@@ -31,8 +31,9 @@ public:
 	void setIndex(std::size_t index){
 		assert(index < NumElements);
 
-		value = value &~INDEX_MASK + index & INDEX_MASK;
+		value = (value &~INDEX_MASK) + (index & INDEX_MASK);
 	}
+	ValueType getValue(){ return value;}
 protected:
 	ValueType value;
 };

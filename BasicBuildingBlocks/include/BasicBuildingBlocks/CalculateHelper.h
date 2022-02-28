@@ -47,7 +47,7 @@ inline
 static constexpr ValueType IndexMask(){
 	using MaskType = ValueType;
 	MaskType mask{1};
-	while(mask < numElements){
+	while(mask < numElements-1){
 		mask <<= 1;
 		++mask;
 	}
@@ -57,7 +57,7 @@ inline
 static constexpr ValueType SplitBit(){
 
 	ValueType retVal = 2;
-	while(retVal <= numElements)
+	while(retVal < numElements)
 		retVal <<= 1;
 	return retVal;
 }

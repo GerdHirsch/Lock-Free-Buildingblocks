@@ -13,6 +13,7 @@ class RingbufferPosition<NumElements, true> : protected ABASafeIndex<NumElements
 public:
 	using this_type = RingbufferPosition<NumElements>;
 	using base_type = ABASafeIndex<NumElements>;
+	using ValueType = typename base_type::ValueType;
 
 	RingbufferPosition():base_type(0){}
 
@@ -21,6 +22,18 @@ public:
 		++value;
 		return *this;
 	}
+
+	ValueType getABACounter(){
+		return value & ~INDEX_MASK;
+	}
+	void setABACounter(ValueType counter){
+		value = (value & INDEX_MASK) + (counter &~INDEX_MASK);
+	}
+	using base_type::INDEX_MASK;
+	using base_type::SPLIT_BIT;
+	using base_type::getIndex;
+	using base_type::setIndex;
+	using base_type::getValue;
 protected:
 	using base_type::value;
 };
@@ -35,8 +48,9 @@ public:
 
 	RingbufferPosition():base_type(0){}
 	bool isOptimized(){ return false; }
+
 	this_type& operator++(){
-		if(getIndex() >= NumElements){
+		if(getIndex() >= NumElements-1){
 			setIndex(0);
 			value += SPLIT_BIT;
 		}else{
@@ -49,14 +63,15 @@ public:
 		return value & ~INDEX_MASK;
 	}
 	void setABACounter(ValueType counter){
-		value = value & INDEX_MASK + counter &~INDEX_MASK;
+		value = (value & INDEX_MASK) + (counter &~INDEX_MASK);
 	}
-protected:
-	using base_type::value;
 	using base_type::INDEX_MASK;
 	using base_type::SPLIT_BIT;
 	using base_type::getIndex;
 	using base_type::setIndex;
+	using base_type::getValue;
+protected:
+	using base_type::value;
 };
 
 

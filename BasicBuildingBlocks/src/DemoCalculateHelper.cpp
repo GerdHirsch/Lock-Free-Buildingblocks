@@ -10,7 +10,9 @@ void demoIsPowerOfTwo(){
 	cout << "IsPowerOfTwo(2): " << CalculateHelper<2>::isPowerOfTwo() << endl;
 	cout << "IsPowerOfTwo(3): " << CalculateHelper<3>::isPowerOfTwo() << endl;
 	cout << "IsPowerOfTwo(4): " << CalculateHelper<4>::isPowerOfTwo() << endl;
-	cout << "IsPowerOfTwo(7): " << CalculateHelper<7>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(4): " << CalculateHelper<5>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(5): " << CalculateHelper<6>::isPowerOfTwo() << endl;
+	cout << "IsPowerOfTwo(6): " << CalculateHelper<7>::isPowerOfTwo() << endl;
 	cout << "IsPowerOfTwo(8): " << CalculateHelper<8>::isPowerOfTwo() << endl;
 	cout << "IsPowerOfTwo(9): " << CalculateHelper<9>::isPowerOfTwo() << endl;
 }
@@ -22,13 +24,16 @@ void demoCalculateMask(){
 	cout << "IndexMask(2): " << CalculateHelper<2>::IndexMask() << endl;
 	cout << "IndexMask(3): " << CalculateHelper<3>::IndexMask() << endl;
 	cout << "IndexMask(4): " << CalculateHelper<4>::IndexMask() << endl;
+	cout << "IndexMask(5): " << CalculateHelper<5>::IndexMask() << endl;
 	cout << "IndexMask(7): " << CalculateHelper<7>::IndexMask() << endl;
 	cout << "IndexMask(8): " << CalculateHelper<8>::IndexMask() << endl;
 	cout << "IndexMask(9): " << CalculateHelper<9>::IndexMask() << endl;
 	cout << "IndexMask(15): " << CalculateHelper<15>::IndexMask() << endl;
 	cout << "IndexMask(16): " << CalculateHelper<16>::IndexMask() << endl;
+	cout << "IndexMask(17): " << CalculateHelper<17>::IndexMask() << endl;
 	cout << "IndexMask(31): " << CalculateHelper<31>::IndexMask() << endl;
 	cout << "IndexMask(32): " << CalculateHelper<32>::IndexMask() << endl;
+	cout << "IndexMask(33): " << CalculateHelper<33>::IndexMask() << endl;
 }
 void demoCalculateSplitBit(){
 	cout << __PRETTY_FUNCTION__ << endl;
@@ -40,6 +45,8 @@ void demoCalculateSplitBit(){
 	cout << "SplitBit(2): " << CalculateHelper<2>::SplitBit() << endl;
 	cout << "SplitBit(3): " << CalculateHelper<3>::SplitBit() << endl;
 	cout << "SplitBit(4): " << CalculateHelper<4>::SplitBit() << endl;
+	cout << "SplitBit(5): " << CalculateHelper<5>::SplitBit() << endl;
+	cout << "SplitBit(6): " << CalculateHelper<6>::SplitBit() << endl;
 	cout << "SplitBit(7): " << CalculateHelper<7>::SplitBit() << endl;
 	cout << "SplitBit(8): " << CalculateHelper<8>::SplitBit() << endl;
 	cout << "SplitBit(9): " << CalculateHelper<9>::SplitBit() << endl;
