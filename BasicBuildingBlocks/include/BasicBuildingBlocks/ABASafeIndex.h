@@ -1,7 +1,7 @@
 #ifndef INCLUDE_ABASAFEINDEX_H_
 #define INCLUDE_ABASAFEINDEX_H_
 
-#include <BasicBuildingBlocks/CalculaterHelper.hpp>
+#include <BasicBuildingBlocks/CalculateHelper.h>
 
 template<std::size_t NumElements_>
 class ABASafeIndex{
