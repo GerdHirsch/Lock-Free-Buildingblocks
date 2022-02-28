@@ -17,8 +17,9 @@ int main(){
 //	demoABASafeIndex();
 //	demoUniqueIndex();
 //	demoIsPowerOfTwo();
+//	demoRingbufferPosition();
 //	demoRingbufferPositionIsOptimized();
-	demoRingbufferPosition();
+	demoRingbufferPositionIsBehind();
 
 //	demoIsLockfree();
 //	demoCalculateMaxNumElementsForSizeT();

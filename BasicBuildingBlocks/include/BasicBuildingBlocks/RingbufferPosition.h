@@ -29,6 +29,35 @@ public:
 	void setABACounter(ValueType counter){
 		value = (value & INDEX_MASK) + (counter &~INDEX_MASK);
 	}
+	/**
+		 * defines a follow up relation of two positions
+		 * lhs.isbehind(rhs)
+		 * lhs (this) is behind rhs if it is in the same block (same ABACount)
+		 * and it큦 index is less than rhs.getIndex()
+		 * or
+		 * lhs is in the previous block and it큦 index is greater or equal than rhs.getIndex()
+		 *
+		 * must be implemented consistently with operator==()
+		 * uses unsigned overflow to turn numOverruns infinitely around
+		 */
+		bool isBehind(this_type rhs)const{
+			bool retVal{false};
+			std::size_t rhsIdx = getIndex();
+			std::size_t lhsIdx = rhs.getIndex();
+			std::size_t rhsABA = getABACounter();
+			std::size_t lhsABA = rhs.getABACounter();
+
+			if(rhsABA == lhsABA && rhsIdx < lhsIdx){
+				// both in the same Block
+				retVal = true;
+			}else if(rhsABA+1 == lhsABA && rhsIdx >= lhsIdx){
+				// lhs (e.g. writer) one Block ahead
+				// rhs.Idx == lhs.Idx => queue is full
+				retVal = true;
+			}
+
+			return retVal;
+		}
 	using base_type::INDEX_MASK;
 	using base_type::SPLIT_BIT;
 	using base_type::getIndex;
@@ -59,12 +88,41 @@ public:
 		return *this;
 
 	}
-	ValueType getABACounter(){
+	ValueType getABACounter() const{
 		return value & ~INDEX_MASK;
 	}
 	void setABACounter(ValueType counter){
 		value = (value & INDEX_MASK) + (counter &~INDEX_MASK);
 	}
+	/**
+		 * defines a follow up relation of two positions
+		 * lhs.isbehind(rhs)
+		 * lhs (this) is behind rhs if it is in the same block (same ABACount)
+		 * and it큦 index is less than rhs.getIndex()
+		 * or
+		 * lhs is in the previous block and it큦 index is greater or equal than rhs.getIndex()
+		 *
+		 * must be implemented consistently with operator==()
+		 * uses unsigned overflow to turn ABACounter infinitely around
+		 */
+		bool isBehind(this_type rhs)const{
+			bool retVal{false};
+			std::size_t rhsIdx = getIndex();
+			std::size_t lhsIdx = rhs.getIndex();
+			ValueType rhsABA = getABACounter();
+			ValueType lhsABA = rhs.getABACounter();
+
+			if(rhsABA == lhsABA && rhsIdx < lhsIdx){
+				// both in the same Block
+				retVal = true;
+			}else if(rhsABA+SPLIT_BIT == lhsABA && rhsIdx >= lhsIdx){
+				// lhs (e.g. writer) one Block ahead
+				// rhs.Idx == lhs.Idx => queue is full
+				retVal = true;
+			}
+
+			return retVal;
+		}
 	using base_type::INDEX_MASK;
 	using base_type::SPLIT_BIT;
 	using base_type::getIndex;

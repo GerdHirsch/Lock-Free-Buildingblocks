@@ -16,5 +16,6 @@ void demoUniqueIndex();
 // DemoRingbufferPosition
 void demoRingbufferPositionIsOptimized();
 void demoRingbufferPosition();
+void demoRingbufferPositionIsBehind();
 
 #endif /* DEMOS_H_ */

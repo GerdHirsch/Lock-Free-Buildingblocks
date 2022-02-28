@@ -25,7 +25,7 @@ public:
 	: value(value)
 	{}
 
-	std::size_t getIndex(){
+	std::size_t getIndex()const{
 		return value & INDEX_MASK;
 	}
 	void setIndex(std::size_t index){
@@ -33,7 +33,7 @@ public:
 
 		value = (value &~INDEX_MASK) + (index & INDEX_MASK);
 	}
-	ValueType getValue(){ return value;}
+	ValueType getValue()const{ return value;}
 protected:
 	ValueType value;
 };

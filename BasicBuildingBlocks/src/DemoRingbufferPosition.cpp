@@ -52,6 +52,28 @@ void demoRingbufferPosition(){
 	}
 }
 
+void demoRingbufferPositionIsBehind(){
+	constexpr std::size_t numElements{5};
+	using RbP = RingbufferPosition<numElements>;
+	RbP rbpBefore, rbpBehind;
+	cout
+		<< " rbpBefore.getIndex: " << rbpBefore.getIndex()
+		<< " rbp.getABACount: " << rbpBefore.getABACounter() << endl;
+
+
+	rbpBehind.setABACounter(~RbP::INDEX_MASK);
+//	++rbpBehind;
+	cout
+		<< " rbpBehind.getIndex: " << rbpBehind.getIndex()
+		<< " rbp.getABACount: " << rbpBehind.getABACounter() << endl;
+
+
+	cout << boolalpha << endl;
+	cout << "behind.isbehind(before): " << rbpBehind.isBehind(rbpBefore) << endl;
+	cout << "before.isbehind(behind): " << rbpBefore.isBehind(rbpBehind) << endl;
+
+}
+
 void demoRingbufferPositionIsOptimized(){
 	RingbufferPosition<3> rp3;
 	RingbufferPosition<4> rp4;
