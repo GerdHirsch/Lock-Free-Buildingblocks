@@ -1,10 +1,9 @@
 /*
  * copyright Gerd Hirsch
  */
-#include "ABASafeIndex/RingbufferPosition.h"
-#include "ABASafeIndex/UniqueIndex.h"
-#include "ABASafeIndex/ABASafeIndex.h"
-
+#include <BasicBuildingBlocks/ABASafeIndex.h>
+#include <BasicBuildingBlocks/RingbufferPosition.h>
+#include <BasicBuildingBlocks/UniqueIndex.h>
 #include <iostream>
 #include <atomic>
 using namespace std;
