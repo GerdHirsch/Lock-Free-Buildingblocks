@@ -72,7 +72,6 @@ public:
 
 };
 
-using DefaultTypeFactory = TypeFactory<>;
 
 using namespace std;
 
@@ -80,6 +79,7 @@ void demoTypeFactory(){
 	cout << __PRETTY_FUNCTION__ << endl;
 //		using MyTypeFactory = TypeFactory<>::setProducer<Other>;
 
+	using DefaultTypeFactory = TypeFactory<>;
 	cout << "=== Multi Multi" << endl;
 	{
 		using MyTypeFactory = DefaultTypeFactory;
