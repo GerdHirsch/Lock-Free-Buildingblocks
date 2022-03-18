@@ -24,6 +24,8 @@ struct MultiConsumer{
 };
 
 // TypeFactory creates Producer & Consumer types see demo
+// with setProducer<Single/Multi> & setConsumer<Single/Multi>
+// in arbitrary order
 template<class ProducerType_=MultiProducer, class ConsumerType_=MultiConsumer>
 struct TypeFactory{
 	using Producer = ProducerType_;
@@ -32,7 +34,8 @@ struct TypeFactory{
 
 //--------------
 private:
-	template<class ProducerType, class Types = this_type>
+	// generic programming member-type-functions
+	template<class ProducerType, class Types>
 	struct setProducerImpl{
 		static_assert(std::is_same_v<ProducerType, Single> || std::is_same_v<ProducerType, Multi>,
 				"ProducerType must be of Single or Multi");
@@ -46,7 +49,7 @@ private:
 		using type = TypeFactory<SingleProducer, typename Types::Consumer>;
 	};
 //--------------
-	template<class ConsumerType, class Types = this_type>
+	template<class ConsumerType, class Types>
 	struct setConsumerImpl{
 		static_assert(std::is_same_v<ConsumerType, Single> || std::is_same_v<ConsumerType, Multi>,
 						"ConsumerType must be of Single or Multi");
