@@ -14,7 +14,7 @@ int main(){
 	cout << "ABASafeIndex" << endl;
 //	demoCalculateMask();
 //	demoCalculateSplitBit();
-	demoIsPowerOfTwo();
+//	demoIsPowerOfTwo();
 //	demoABASafeIndex();
 //	demoUniqueIndex();
 //	demoRingbufferPosition();
@@ -23,6 +23,7 @@ int main(){
 
 //	demoIsLockfree();
 //	demoCalculateMaxNumElementsForSizeT();
+	demoTypeFactory();
 
 }
 

@@ -18,4 +18,6 @@ void demoRingbufferPositionIsOptimized();
 void demoRingbufferPosition();
 void demoRingbufferPositionIsBehind();
 
+// Demo Type Factory
+void demoTypeFactory();
 #endif /* DEMOS_H_ */
