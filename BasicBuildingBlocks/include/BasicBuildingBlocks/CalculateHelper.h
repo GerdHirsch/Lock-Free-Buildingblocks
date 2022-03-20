@@ -18,8 +18,6 @@ public:
 	using this_type = CalculateHelper<NumElements>;
 
 	enum ValueTypes{ USHORT, SIZE_T, ULongLong};
-inline
-//static constexpr ValueTypes getTypeEnum(std::size_t numElements){
 	static constexpr ValueTypes getTypeEnum(){
 
 		constexpr auto MAX_NUM_ELEMENTS_FOR_Short =
@@ -68,18 +66,12 @@ static constexpr ValueType IndexMask(){
 inline
 static constexpr ValueType SplitBit(){
 	return (IndexMask() << 1) & ~IndexMask();
-
-//	ValueType retVal = 2;
-//	while(retVal < numElements)
-//		retVal <<= 1;
-//	return retVal;
 }
 inline
 static constexpr bool isPowerOfTwoWithoutOne(){
 //	return numElements == 1 ? true : SplitBit() == numElements;
 	return SplitBit() == NumElements;
 }
-
 
 };
 #endif /* INCLUDE_BASICBUILDINGBLOCKS_CALCULATEHELPER_H_ */
