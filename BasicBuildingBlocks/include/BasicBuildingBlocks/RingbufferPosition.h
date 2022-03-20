@@ -4,7 +4,7 @@
 #include <BasicBuildingBlocks/ABASafeIndex.h>
 
 /** Specialization for isPowerOfTwo(NumElements) is possible but not implemented yet */
-template<std::size_t NumElements, bool = CalculateHelper<NumElements>::isPowerOfTwo()>
+template<std::size_t NumElements, bool = CalculateHelper<NumElements>::isPowerOfTwoWithoutOne()>
 class RingbufferPosition;
 
 
@@ -132,6 +132,8 @@ protected:
 	using base_type::value;
 };
 
-
+// special case for one element
+//template<bool isPowerOfTwo>
+//class RingbufferPosition<1, isPowerOfTwo> : public RingbufferPosition<1, false>{};
 
 #endif /* INCLUDE_BASICBUILDINGBLOCKS_RINGBUFFERPOSITION_H_ */

@@ -12,6 +12,7 @@ using namespace std;
 
 int main(){
 	cout << "ABASafeIndex" << endl;
+	demoCalculateValueType();
 //	demoCalculateMask();
 //	demoCalculateSplitBit();
 //	demoIsPowerOfTwo();
@@ -23,7 +24,7 @@ int main(){
 
 //	demoIsLockfree();
 //	demoCalculateMaxNumElementsForSizeT();
-	demoTypeFactory();
+//	demoTypeFactory();
 
 }
 

@@ -3,6 +3,7 @@
 
 #include <atomic>
 #include <iostream>
+#include <limits>
 using namespace std;
 
 
@@ -27,7 +28,9 @@ void demoCalculateMaxNumElementsForSizeT(){
 	cout << "size_t = -1: " << std::hex << static_cast<std::size_t>(-1) << endl;
 	constexpr auto MAX_NUM_ELEMENTS_FOR_SIZE_T =
 				static_cast<std::size_t>(-1) >> 9;
-	cout << "MAX_NUM_ELEMENTS_FOR_SIZE_T: " << MAX_NUM_ELEMENTS_FOR_SIZE_T << endl;
+	cout << "numeric_limits<std::size_t:  " << std::hex << std::numeric_limits<std::size_t>::max() << endl;
+	cout << "MAX_NUM_ELEMENTS_FOR_SIZE_T: " << std::hex << MAX_NUM_ELEMENTS_FOR_SIZE_T << endl;
+	cout << "numeric_limits<std::size_t:  " << std::hex << (std::numeric_limits<std::size_t>::max() >> 9) << endl;
 
 
 }

@@ -6,6 +6,7 @@
 void demoCalculateMask();
 void demoCalculateSplitBit();
 void demoIsPowerOfTwo();
+void demoCalculateValueType();
 //DemoOther
 void demoIsLockfree();
 void demoCalculateMaxNumElementsForSizeT();
