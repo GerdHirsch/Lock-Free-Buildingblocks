@@ -7,7 +7,7 @@
 template<std::size_t NumElements, bool = CalculateHelper<NumElements>::isPowerOfTwoWithoutOne()>
 class RingbufferPosition;
 
-
+// optimized version for NumElements == power of two without one
 template<std::size_t NumElements>
 class RingbufferPosition<NumElements, true> : protected ABASafeIndex<NumElements>{
 public:

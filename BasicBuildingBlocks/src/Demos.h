@@ -10,6 +10,7 @@ void demoCalculateValueType();
 //DemoOther
 void demoIsLockfree();
 void demoCalculateMaxNumElementsForSizeT();
+
 //
 void demoABASafeIndex();
 void demoUniqueIndex();
@@ -21,4 +22,9 @@ void demoRingbufferPositionIsBehind();
 
 // Demo Type Factory
 void demoTypeFactory();
+
+
+// Demo Wait-Free Queue
+void demoWaitFreeQueueSingleThreaded();
+void demoWaitFreeQueueMultiThreaded();
 #endif /* DEMOS_H_ */
