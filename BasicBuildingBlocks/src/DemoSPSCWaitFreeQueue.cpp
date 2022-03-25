@@ -6,6 +6,7 @@
 
 
 #include <BasicBuildingBlocks/SPSCWaitFreeQueue.h>
+#include <BasicBuildingBlocks/CacheLineCell.h>
 
 
 #include <atomic>
@@ -18,14 +19,17 @@ using namespace std;
 
 void demoWaitFreeQueueSingleThreaded(){
 	cout << __PRETTY_FUNCTION__ << endl;
-	constexpr std::size_t NumElements = 5;
+	static constexpr std::size_t elementsPerCacheLine = 4;
+	using ElementType = std::size_t;
 
-	SPSCWaitFreeQueue<std::size_t, NumElements> queue;
+	using QueueElementType = CacheLineCell<ElementType, elementsPerCacheLine>;
+	constexpr std::size_t NumElements = 5;
+	SPSCWaitFreeQueue<QueueElementType, NumElements> queue;
 
 	for(std::size_t i=1; queue.push(i); ++i)
 		;
 
-	std::size_t element{};
+	QueueElementType element{};
 	while(queue.pop(element)){
 		cout << "element: " << element << endl;
 	}

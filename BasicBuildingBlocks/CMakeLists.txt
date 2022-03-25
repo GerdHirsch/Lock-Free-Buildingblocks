@@ -17,6 +17,7 @@ add_library(
     src/DemoSPSCWaitFreeQueue.cpp
     src/DemoTypeBuilder.cpp
     src/DemoUniqueIndex.cpp
+    src/DemoCacheLineCell.cpp
 )
 target_include_directories(
     basic_building_blocks_demo

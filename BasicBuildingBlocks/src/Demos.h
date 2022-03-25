@@ -27,4 +27,8 @@ void demoTypeBuilder();
 // Demo Wait-Free Queue
 void demoWaitFreeQueueSingleThreaded();
 void demoWaitFreeQueueMultiThreaded();
+
+//Demo Cach Line Cell
+void demoCacheLineCell();
+
 #endif /* DEMOS_H_ */

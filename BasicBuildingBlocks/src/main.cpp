@@ -24,10 +24,13 @@ int main(){
 
 //	demoIsLockfree();
 //	demoCalculateMaxNumElementsForSizeT();
-	demoTypeBuilder();
+//	demoTypeBuilder();
 
 //	demoWaitFreeQueueSingleThreaded();
 //	demoWaitFreeQueueMultiThreaded();
+
+	demoCacheLineCell();
+
 
 }
 
