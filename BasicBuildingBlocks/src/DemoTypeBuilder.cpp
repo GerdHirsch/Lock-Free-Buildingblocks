@@ -16,9 +16,9 @@ void demoTypeBuilder(){
 
 	using DefaultTypeBuilder = TypeBuilder2<>;
 	using MMQueue = DefaultTypeBuilder::getQueue<int, 5>;
-	MMQueue queue;
-	queue.print();
-	using SMBuilder = DefaultTypeBuilder::setProducer<Single>;
+	MMQueue mmQueue;
+	mmQueue.print();
+	using SMBuilder = DefaultTypeBuilder::setProducer<Single>::setConsumer<Single>;
 	using SMQueue = SMBuilder::getQueue<int, 5>;
 	SMQueue smQueue;
 	smQueue.print();

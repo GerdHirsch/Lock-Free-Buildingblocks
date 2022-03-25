@@ -1,6 +1,8 @@
 #ifndef INCLUDE_BASICBUILDINGBLOCKS_TYPEBUILDER_H_
 #define INCLUDE_BASICBUILDINGBLOCKS_TYPEBUILDER_H_
 
+#include <BasicBuildingBlocks/SPSCWaitFreeQueue.h>
+
 #include <iostream>
 
 struct Single;
@@ -67,6 +69,15 @@ struct TypeBuilder2{
 		using type = TypeBuilder2<TypeRepository<typename Builder::Properties::Producer, Single>>;
 	};
 
+	template<class ElementType, std::size_t MaxElements, class ProducerType, class ConsumerType>
+	struct getQueueImpl{
+		using type = Queue<ElementType, MaxElements, ProducerType, ConsumerType>;
+	};
+	template<class ElementType, std::size_t MaxElements>
+	struct getQueueImpl<ElementType, MaxElements, Single, Single>{
+		using type = SPSCWaitFreeQueue<ElementType, MaxElements>;
+	};
+
 public:
 	template<class ProducerType>
 	using setProducer = typename this_type::template setProducerImpl<ProducerType, this_type>::type;
@@ -75,8 +86,8 @@ public:
 	using setConsumer = typename this_type::template setConsumerImpl<ConsumerType, this_type>::type;
 
 	template<class ElementType, std::size_t MaxElements>
-	using getQueue = Queue<ElementType, MaxElements,
-			typename Properties::Producer, typename Properties::Consumer>;
+	using getQueue = typename getQueueImpl<ElementType, MaxElements,
+			typename Properties::Producer, typename Properties::Consumer>::type;
 
 };
 
@@ -95,7 +106,6 @@ struct SingleConsumer{
 struct MultiConsumer{
 	static void print() { std::cout << "MultiConsumer" << std::endl; }
 };
-
 
 // TypeFactory creates Producer & Consumer types see demo
 // with setProducer<Single/Multi> & setConsumer<Single/Multi>
