@@ -69,6 +69,7 @@ void demoWaitFreeQueueSingleThreaded(){
 		cout << "element: " << element << endl;
 	}
 }
+
 void demoWaitFreeQueueMultiThreaded(){
 	using namespace std::chrono_literals;
 

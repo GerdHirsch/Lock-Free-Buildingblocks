@@ -15,7 +15,7 @@ add_library(
     src/DemoOther.cpp
     src/DemoRingbufferPosition.cpp
     src/DemoSPSCWaitFreeQueue.cpp
-    src/DemoTypeFactory.cpp
+    src/DemoTypeBuilder.cpp
     src/DemoUniqueIndex.cpp
 )
 target_include_directories(

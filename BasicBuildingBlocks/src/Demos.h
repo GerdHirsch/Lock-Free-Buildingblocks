@@ -21,7 +21,7 @@ void demoRingbufferPosition();
 void demoRingbufferPositionIsBehind();
 
 // Demo Type Factory
-void demoTypeFactory();
+void demoTypeBuilder();
 
 
 // Demo Wait-Free Queue

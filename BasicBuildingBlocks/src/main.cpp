@@ -11,7 +11,7 @@ using namespace std;
 
 
 int main(){
-	cout << "ABASafeIndex" << endl;
+	cout << "BasicBuildingBlocks" << endl;
 //	demoCalculateValueType();
 //	demoCalculateMask();
 //	demoCalculateSplitBit();
@@ -24,10 +24,10 @@ int main(){
 
 //	demoIsLockfree();
 //	demoCalculateMaxNumElementsForSizeT();
-//	demoTypeFactory();
+	demoTypeBuilder();
 
 //	demoWaitFreeQueueSingleThreaded();
-	demoWaitFreeQueueMultiThreaded();
+//	demoWaitFreeQueueMultiThreaded();
 
 }
 
