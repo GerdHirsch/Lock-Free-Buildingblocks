@@ -29,7 +29,8 @@ int main(){
 //	demoWaitFreeQueueSingleThreaded();
 //	demoWaitFreeQueueMultiThreaded();
 
-	demoCacheLineCell();
+//	demoCacheLineCell();
+	demoCompareStoreVSCompareExchange();
 
 
 }

@@ -31,4 +31,6 @@ void demoWaitFreeQueueMultiThreaded();
 //Demo Cach Line Cell
 void demoCacheLineCell();
 
+void demoCompareStoreVSCompareExchange();
+
 #endif /* DEMOS_H_ */
