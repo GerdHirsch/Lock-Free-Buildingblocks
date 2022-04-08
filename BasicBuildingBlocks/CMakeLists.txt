@@ -18,6 +18,7 @@ add_library(
     src/DemoTypeBuilder.cpp
     src/DemoUniqueIndex.cpp
     src/DemoCacheLineCell.cpp
+    src/DemoStoreVSCompareExchange.cpp
 )
 target_include_directories(
     basic_building_blocks_demo

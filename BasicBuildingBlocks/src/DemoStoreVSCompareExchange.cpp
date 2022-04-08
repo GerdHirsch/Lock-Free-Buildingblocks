@@ -9,33 +9,49 @@
 #include <iomanip>
 using namespace std;
 
+//namespace{
+//	using ValueType = unsigned long long;
+//	//volatile
+//	ValueType oldValue{};
+//
+//}
+
+	//	constexpr auto MAX = numeric_limits<ValueType>::max();
 void demoCompareStoreVSCompareExchange(){
 	cout << __PRETTY_FUNCTION__ << endl;
-	using ValueType = unsigned long long;
-	constexpr auto MemoryOrder = memory_order_relaxed;
+	cout << std::setw(9); // for double output
 
+	using ValueType = unsigned long long;
+	ValueType oldValue{};
+
+	constexpr auto MemoryOrder = memory_order_relaxed;
 	atomic<ValueType> value{};
 	cout << "value.is_lock_free(): " << value.is_lock_free() << endl;
-
-	ValueType oldValue{};
-//	constexpr auto MAX = numeric_limits<ValueType>::max();
-	constexpr auto MAX = 10000000;
-
+	constexpr auto MAX = 1000000;
+//===========================================================
+	cout << "value.store: " << MAX << endl;
 	auto start = chrono::high_resolution_clock::now();
 
 	for(ValueType newValue{1ULL}; newValue<MAX; ++newValue){
-		//diff: 45 566 6200 diff: 0.61643 s
-//		value.store(newValue, MemoryOrder);
-		//diff: 85 2430 900 diff: 1.27338 s
-		value.compare_exchange_weak(oldValue, newValue, MemoryOrder, MemoryOrder);
+		value.store(newValue, MemoryOrder);
 		oldValue = newValue;
 	}
 	auto end = chrono::high_resolution_clock::now();
-	chrono::duration<double> diff = end - start;
-	cout << std::setw(9);
-	cout << "diff: " << diff.count() << " s"<< endl;
+	chrono::duration<double> diffStore = end - start;
+	cout << "diffStore: " << diffStore.count() << " s" << endl;
+//===========================================================
+	cout << "value.compare_exchange_weak: " << MAX << endl;
+	value.store(0, MemoryOrder);
+	oldValue = 0ULL;
+	start = chrono::high_resolution_clock::now();
 
+	for(ValueType newValue{1ULL}; newValue<MAX; ++newValue){
+		value.compare_exchange_weak(oldValue, newValue, MemoryOrder, MemoryOrder);
+		oldValue = newValue;
+	}
+	end = chrono::high_resolution_clock::now();
+	chrono::duration<double> diffCompare = end - start;
+	cout << "diffCompare: " << diffCompare.count() << " s" << endl;
 
-//	auto end = chrono::high_resolution_clock::now();
-//	cout << "end: " << end << endl;
+	cout << "Store/Compare: " << diffStore / diffCompare << endl;
 }
