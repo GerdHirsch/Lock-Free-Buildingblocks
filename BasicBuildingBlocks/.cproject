@@ -57,7 +57,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry excluding="cute|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="DemoUniqueIndex.cpp|DemoTypeBuilder.cpp|DemoSPSCWaitFreeQueue.cpp|DemoRingbufferPosition.cpp|DemoOther.cpp|DemoCalculateHelper.cpp|DemoCacheLineCell.cpp|DemoABASafeIndex.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -116,9 +116,12 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.cygwin.exe.release.579633827.996781234" name="DemoUniqueIndex.cpp" rcbsApplicability="disable" resourcePath="src/DemoUniqueIndex.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.release.983716166.849175351">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.release.983716166.849175351" name="Cygwin C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.release.983716166"/>
+					</fileInfo>
 					<sourceEntries>
 						<entry excluding="cute|src" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="DemoUniqueIndex.cpp|DemoTypeBuilder.cpp|DemoSPSCWaitFreeQueue.cpp|DemoRingbufferPosition.cpp|DemoOther.cpp|DemoCalculateHelper.cpp|DemoCacheLineCell.cpp|DemoABASafeIndex.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

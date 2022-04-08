@@ -10,7 +10,7 @@ using namespace std;
 
 
 
-int main_(){
+int main(){
 	cout << "BasicBuildingBlocks" << endl;
 //	demoCalculateValueType();
 //	demoCalculateMask();
